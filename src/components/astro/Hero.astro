@@ -1,0 +1,166 @@
+---
+import { CONTACT_INFO } from '@/data/content';
+---
+
+<section
+  id="seccion-hero"
+  class="w-full bg-brand-marine text-white px-4 sm:px-6 pt-8 pb-12 sm:pt-12 sm:pb-16 relative overflow-hidden"
+>
+  <!-- Sutil fondo texturado decorativo -->
+  <div
+    class="absolute inset-0 bg-gradient-to-b from-brand-marine via-brand-marine to-[#0d1b2a] opacity-95 pointer-events-none"
+    aria-hidden="true"
+  ></div>
+
+  <!-- Glow circular de acento -->
+  <div
+    class="absolute -top-24 -right-24 w-96 h-96 bg-brand-orange/10 rounded-full blur-3xl pointer-events-none"
+    aria-hidden="true"
+  ></div>
+  <div
+    class="absolute -bottom-24 -left-24 w-96 h-96 bg-brand-lightblue/10 rounded-full blur-3xl pointer-events-none"
+    aria-hidden="true"
+  ></div>
+
+  <div class="max-w-3xl mx-auto relative z-10 flex flex-col gap-5 sm:gap-6">
+    <!-- Geographic Live Badge -->
+    <div
+      class="inline-flex items-center gap-2 self-start px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/15 shadow-sm"
+    >
+      <span class="relative flex h-2 w-2">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-status-green opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-status-green"></span>
+      </span>
+      <span class="text-xs font-bold uppercase tracking-wider text-white">
+        EN GUARDIA AHORA • CÓRDOBA Y RUTAS
+      </span>
+    </div>
+
+    <!-- Título y Bajada de Urgencia -->
+    <div class="flex flex-col gap-2">
+      <h1
+        class="text-3xl sm:text-4xl md:text-5xl uppercase text-white tracking-tight font-black leading-[1.05]"
+      >
+        ASISTENCIA VEHICULAR Y GRÚA 24/7
+      </h1>
+      <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed mt-1">
+        Respuesta inmediata para remolques y auxilio en ruta. Cobertura integral en Córdoba y Nacional. Traslados seguros a todo el país.
+      </p>
+    </div>
+
+    <!-- ETA Live Card -->
+    <div
+      class="w-full rounded-2xl bg-white/10 backdrop-blur-md p-4 sm:p-5 flex items-center justify-between border border-white/15 shadow-lg"
+    >
+      <div class="flex items-center gap-3 sm:gap-4">
+        <div
+          class="w-12 h-12 rounded-xl bg-surface-white flex items-center justify-center text-brand-marine shadow-sm flex-shrink-0"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="w-6 h-6 text-brand-marine"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-[11px] sm:text-xs font-bold uppercase text-brand-lightblue tracking-wider">
+            TIEMPO PROMEDIO ESTIMADO
+          </span>
+          <span class="text-lg sm:text-2xl text-white font-black tracking-tight">
+            25 - 35 minutos
+          </span>
+        </div>
+      </div>
+      <span
+        class="px-3 py-1.5 rounded-lg bg-brand-orange text-white text-xs sm:text-sm uppercase font-black tracking-wider shadow-sm flex-shrink-0"
+      >
+        EN RUTA
+      </span>
+    </div>
+
+    <!-- CTAs Primarios -->
+    <div class="flex flex-col sm:flex-row gap-3 w-full pt-1">
+      <a
+        id="btn-whatsapp-hero"
+        href={CONTACT_INFO.defaultWhatsappUrl}
+        class="w-full sm:flex-1 h-14 rounded-xl bg-brand-orange hover:bg-[#cf4f2c] active:scale-[0.99] text-white flex items-center justify-center gap-2.5 text-base font-black uppercase tracking-wider shadow-lg shadow-brand-orange/30 transition-all focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-orange/40"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="w-6 h-6"
+          aria-hidden="true"
+        >
+          <path
+            d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+          />
+        </svg>
+        <span>SOLICITAR GRÚA AHORA</span>
+      </a>
+
+      <a
+        id="btn-llamar-hero"
+        href={CONTACT_INFO.telUrl}
+        class="w-full sm:w-auto px-5 h-14 rounded-xl bg-white/10 hover:bg-white/20 active:scale-[0.99] text-white flex items-center justify-center gap-2 text-sm sm:text-base font-bold uppercase tracking-wider border border-white/20 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="w-5 h-5 text-brand-orange"
+          aria-hidden="true"
+        >
+          <path
+            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+          />
+        </svg>
+        <span>Llamar Directo al Chofer</span>
+      </a>
+    </div>
+
+    <!-- Badge Trato Directo -->
+    <div
+      class="w-full rounded-xl bg-white/5 border border-white/10 p-3.5 sm:p-4 flex items-center gap-3"
+    >
+      <div
+        class="w-9 h-9 rounded-full bg-brand-lightblue/20 text-brand-lightblue flex-shrink-0 flex items-center justify-center border border-brand-lightblue/30"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="w-5 h-5 text-brand-lightblue"
+          aria-hidden="true"
+        >
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          <path d="m9 12 2 2 4-4" />
+        </svg>
+      </div>
+      <p class="text-xs sm:text-sm text-slate-300 leading-snug">
+        <strong class="text-white font-bold">1 Unidad Operativa Equipada:</strong> Trato directo y personalizado con el operador sin intermediarios, esperas ni demoras burocráticas de aseguradoras.
+      </p>
+    </div>
+  </div>
+</section>

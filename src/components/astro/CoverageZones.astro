@@ -1,0 +1,93 @@
+---
+import { COVERAGE_ZONES, CONTACT_INFO } from '@/data/content';
+
+const interprovincialUrl = `https://wa.me/${CONTACT_INFO.rawPhone}?text=${encodeURIComponent('Hola, quisiera cotizar un traslado interprovincial')}`;
+---
+
+<section id="seccion-cobertura" class="w-full px-4 sm:px-6 py-12 bg-surface-white">
+  <div class="max-w-3xl mx-auto flex flex-col gap-6">
+    <!-- Header de Sección -->
+    <div class="flex flex-col gap-1">
+      <span class="text-xs font-extrabold uppercase tracking-wider text-brand-orange">
+        ALCANCE OPERATIVO
+      </span>
+      <h2 class="text-2xl sm:text-3xl text-brand-marine uppercase font-black tracking-tight">
+        ZONAS Y CORREDORES
+      </h2>
+      <p class="text-sm text-slate-600">
+        Bases estratégicas para garantizar tiempos de respuesta mínimos en toda el área metropolitana y rutas.
+      </p>
+    </div>
+
+    <!-- Grid de 6 Zonas -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-3">
+      {COVERAGE_ZONES.map((zone) => (
+        <div class="p-3.5 sm:p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col gap-1 hover:border-brand-lightblue transition-colors">
+          <div class="flex items-center gap-2 text-brand-marine">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="w-4 h-4 text-brand-orange flex-shrink-0"
+              aria-hidden="true"
+            >
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span class="text-xs sm:text-sm font-black uppercase tracking-tight text-brand-marine leading-tight">
+              {zone.name}
+            </span>
+          </div>
+          <span class="text-[11px] sm:text-xs text-slate-500 font-medium pl-6">
+            {zone.description}
+          </span>
+        </div>
+      ))}
+    </div>
+
+    <!-- Banner Viajes a Todo el País -->
+    <div
+      class="w-full rounded-2xl bg-brand-marine text-white p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-md border border-white/10"
+    >
+      <div class="flex flex-col gap-1">
+        <span class="text-xs font-bold uppercase text-brand-lightblue tracking-wider">
+          TRASLADOS PROGRAMADOS
+        </span>
+        <h3 class="text-lg sm:text-xl font-black uppercase text-white tracking-tight">
+          VIAJES A TODO EL PAÍS
+        </h3>
+        <p class="text-xs sm:text-sm text-slate-300">
+          Traslado interprovincial seguro de vehículos particulares, clásicos o utilitarios con seguro de carga.
+        </p>
+      </div>
+
+      <a
+        id="btn-traslado-interprovincial"
+        href={interprovincialUrl}
+        class="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-brand-orange hover:bg-[#cf4f2c] active:scale-[0.99] text-white text-xs sm:text-sm font-black uppercase tracking-wider shadow-md shadow-brand-orange/20 transition-all flex-shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="w-4 h-4"
+          aria-hidden="true"
+        >
+          <rect x="1" y="3" width="15" height="13" />
+          <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+          <circle cx="5.5" cy="18.5" r="2.5" />
+          <circle cx="18.5" cy="18.5" r="2.5" />
+        </svg>
+        <span>Cotizar Viaje Nacional</span>
+      </a>
+    </div>
+  </div>
+</section>

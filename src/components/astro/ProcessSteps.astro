@@ -1,0 +1,39 @@
+---
+import { PROCESS_STEPS } from '@/data/content';
+---
+
+<section id="seccion-proceso" class="w-full px-4 sm:px-6 py-12 bg-slate-100">
+  <div class="max-w-3xl mx-auto flex flex-col gap-6">
+    <!-- Header de Sección -->
+    <div class="flex flex-col gap-1">
+      <span class="text-xs font-extrabold uppercase tracking-wider text-brand-orange">
+        PROCEDIMIENTO SIMPLE
+      </span>
+      <h2 class="text-2xl sm:text-3xl text-brand-marine uppercase font-black tracking-tight">
+        ¿CÓMO SOLICITAR AUXILIO?
+      </h2>
+      <p class="text-sm text-slate-600">
+        Sin registros engorrosos ni llamadas en espera. Operación ágil en 3 pasos directos.
+      </p>
+    </div>
+
+    <!-- Lista de 3 Pasos -->
+    <div class="flex flex-col gap-3 sm:gap-4">
+      {PROCESS_STEPS.map((step) => (
+        <div class="p-5 rounded-2xl bg-white flex items-start gap-4 shadow-sm border border-slate-200">
+          <div class="w-10 h-10 rounded-full bg-brand-orange text-white flex-shrink-0 flex items-center justify-center text-lg font-black shadow-sm">
+            {step.stepNumber}
+          </div>
+          <div class="flex flex-col">
+            <h3 class="text-base sm:text-lg text-brand-marine font-black uppercase">
+              {step.title}
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">
+              {step.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

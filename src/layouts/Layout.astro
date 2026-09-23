@@ -1,0 +1,115 @@
+---
+import '../styles/global.css';
+import { CONTACT_INFO } from '@/data/content';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalUrl?: string;
+}
+
+const {
+  title = `${CONTACT_INFO.brandName} | ${CONTACT_INFO.brandTagline} en Córdoba`,
+  description = 'Servicio de grúas y auxilio mecánico 24/7 en Córdoba Capital y rutas provinciales. Trato directo con el chofer, camilla hidráulica, puente de batería y cambio de neumáticos. Llegada en 25-35 min.',
+  canonicalUrl = 'https://auxilioargentino.com.ar',
+} = Astro.props;
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'EmergencyService',
+  name: CONTACT_INFO.brandName,
+  description: description,
+  image: 'https://auxilioargentino.com.ar/og-image.jpg',
+  telephone: '+5493512581818',
+  url: canonicalUrl,
+  priceRange: '$$',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Córdoba',
+    addressRegion: 'Córdoba',
+    addressCountry: 'AR',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: -31.4201,
+    longitude: -64.1888,
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: [
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday',
+        'Sunday',
+      ],
+      opens: '00:00',
+      closes: '23:59',
+    },
+  ],
+  areaServed: [
+    {
+      '@type': 'AdministrativeArea',
+      name: 'Córdoba Capital',
+    },
+    {
+      '@type': 'AdministrativeArea',
+      name: 'Provincia de Córdoba',
+    },
+    {
+      '@type': 'Country',
+      name: 'Argentina',
+    },
+  ],
+  sameAs: [
+    CONTACT_INFO.defaultWhatsappUrl,
+  ],
+};
+---
+
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta name="theme-color" content="#132539" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:locale" content="es_AR" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalUrl} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+
+    <!-- Google Fonts: Epilogue -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  </head>
+  <body class="min-h-screen bg-surface-gray text-brand-marine font-sans antialiased flex flex-col selection:bg-brand-orange selection:text-white">
+    <slot />
+  </body>
+</html>

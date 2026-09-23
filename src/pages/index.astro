@@ -1,0 +1,44 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Header from '@/components/astro/Header.astro';
+import Hero from '@/components/astro/Hero.astro';
+import QuickQuote from '@/components/svelte/QuickQuote.svelte';
+import ServicesGrid from '@/components/astro/ServicesGrid.astro';
+import ProcessSteps from '@/components/astro/ProcessSteps.astro';
+import CoverageZones from '@/components/astro/CoverageZones.astro';
+import Guarantees from '@/components/astro/Guarantees.astro';
+import Footer from '@/components/astro/Footer.astro';
+import StickyBottomBar from '@/components/svelte/StickyBottomBar.svelte';
+---
+
+<Layout>
+  <!-- Header Fijo Superior -->
+  <Header />
+
+  <!-- Main Content -->
+  <main class="flex-1 flex flex-col">
+    <!-- Hero Section de Urgencia -->
+    <Hero />
+
+    <!-- Cotizador Rápido Express (Svelte Island) -->
+    <QuickQuote client:load />
+
+    <!-- Servicios Especializados (Grid Astro) -->
+    <ServicesGrid />
+
+    <!-- Proceso en 3 Pasos -->
+    <ProcessSteps />
+
+    <!-- Zonas de Cobertura y Traslados Nacionales -->
+    <CoverageZones />
+
+    <!-- Tranquilidad, Factura Oficial A/B y Garantías -->
+    <Guarantees />
+  </main>
+
+  <!-- Footer Informativo -->
+  <Footer />
+
+  <!-- Sticky Bottom Bar de Conversión Permanente (Svelte Island) -->
+  <StickyBottomBar client:load />
+</Layout>
